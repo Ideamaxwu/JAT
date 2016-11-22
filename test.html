@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="myjs.js"></script>
+
+<body ng-app="myApp" ng-Controller="myCtrl" ng-init="myInit()">
+
+<div ng-app="myAppNone">
+ 	<p>Name: <input type="text" ng-model="name"></p>
+ 	<p ng-bind="name"></p>
+	---
+	<p>My first expression: {{5+3}}</p>
+	---
+	<p>Name: {{name}}</p>
+	---
+</div>
+
+<div>
+	First Name: <input type="text" ng-model="firstName"><br>
+	Last Name: <input type="text" ng-model="lastName"><br>
+	<br>
+	Full name: {{firstName + " " + lastName}}<br>
+	---
+	<p>
+		<input style="background-color:{{myColor}}" ng-model="myColor" value="{{myColor}}"><br>
+		Color: <span ng-bind="myColor"></span><br>
+		My name is: {{person.fName + " " + person.lName}}
+	</p>
+	---
+	<ul>
+		<li ng-repeat="x in names | filter: 'a'">
+		{{x}}
+		</li>
+	</ul>
+	---
+	<form ng-app="" name="myForm">
+    	Email:
+    	<input type="email" name="myAddress" ng-model="text">
+    	<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+	</form>
+
+	<p>Enter your e-mail address in the input field. AngularJS will display an errormessage if the address is not an e-mail.</p>
+</div>
+---
+<div my-direct></div>
+---
+<div>
+	Car: {{carname}}<br>
+	The name is {{"wu yao"|uppercase}}<br>
+	Location: {{loc}}<br>
+	<!--Welcome: {{wel}}-->
+</div>
+---
+<!--<div ng-include="'welcome.htm'"></div>-->
+</body>
+
+</html>

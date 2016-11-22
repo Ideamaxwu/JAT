@@ -1,2 +1,2 @@
-# This is just a readme
-# add more line for test
+# This is just a readme.
+# This is used for Angular practice before BAD web clinet.
